@@ -37,12 +37,12 @@ Behaviors to remember-
  
 */
 
+//QTR vars
 #include <QTRSensors.h>
 QTRSensors qtr;
 const uint8_t SensorCount = 8;
 uint16_t sensorValues[SensorCount];
 #define num_sensors 8
-
 const int w1 = 5;
 const int w2 = 3;
 const int w3= 9;
@@ -55,6 +55,14 @@ const int w21 = 12;
 const int w22 = 13;
 const int w23 = 11 ;
 const int w24 = 10;
+
+//vars for the PID
+float kd, kp, ki;
+int error, lasterror, motorspeed;
+
+//vars for the timer
+bool check = 1;
+
 
 void setup() {
   Serial.begin(9600);
@@ -79,4 +87,4 @@ void loop() {
 
 }
 
-error = 
+
